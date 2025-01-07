@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to <%= title %>
+  </p>
+  <div id="id1">
+
+    <% if (successMessage) { %>
+      <div class="alert alert-success">
+        <%= successMessage %>
+      </div>
+      <% } %>
+      <% if (errorMessage) { %>
+        <div class="alert alert-danger">
+          <%= errorMessage %>
+        </div>
+        <% } %>
+      </div>
+      <script src="/javascripts/flash.js"></script>
+      </body>
+
+</html>

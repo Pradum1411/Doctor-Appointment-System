@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+</head>
+
+<body>
+    <div class="box">
+        <span class="borderLine"></span>
+        <form action="/signup" method="post">
+            <h2>Register</h2>
+            <div id="id1">
+
+                <% if (successMessage) { %>
+                    <div id="flash-message1" class="alert alert-success">
+                        <%= successMessage %>
+                    </div>
+                    <% } %>
+                        <% if (errorMessage) { %>
+                            <div id="flash-message2" class="alert alert-danger">
+                                <%= errorMessage %>
+                            </div>
+                            <% } %>
+            </div>
+            <div class="inputBox">
+                <input type="text" required name="name">
+                <span>name</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="email" required name="email">
+                <span>email</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="text" required name="password">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="#">home</a>
+                <a href="/login">Login</a>
+            </div>
+            <input type="submit" id="submit" value="register" onclick="data()">
+        </form>
+    </div>
+    <script src="/javascripts/flash.js">
+
+    </script>
+</body>
+
+</html>

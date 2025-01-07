@@ -1,0 +1,24 @@
+<%-include("side_nav")-%>
+
+
+<table class="table">
+  <thead class="thead">
+    <tr class="tr">
+      <th class='prop__name, th' data-prop-name='firstName'>Reference Id</th>
+      <th class='prop__name, th' data-prop-name='firstName'>Name</th>
+      <th class='prop__name, th' data-prop-name='lastName'>Date & Time</th>
+      <th class='prop__name, th' data-prop-name='birth'>Status</th>
+    </tr>
+    <% appointment.forEach((item)=>{%>
+        <tr class="tr">
+            <td class='prop__name, td' data-prop-name='firstName'><%=item._id%></td>
+            <td class='prop__name, td' data-prop-name='firstName'><%=item.userId.name%></td>
+            <td class='prop__name, td' data-prop-name='lastName'><%=item.date%> <%=item.timing.start_time%></td>
+            <td class='prop__name, td' data-prop-name='birth'><%=item.status%></td>
+          </tr>
+    <%}) %>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<%-include("footer")-%>

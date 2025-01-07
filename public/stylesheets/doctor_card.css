@@ -1,0 +1,79 @@
+.container1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px;
+  gap: 50px;
+}
+
+.container1 .box1 {
+  position: relative;
+  height: 330px;
+  width: 300px;
+  background: #fff;
+  border-radius: 20px;
+}
+
+.container1 .box1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: rgb(243, 244, 245);
+}
+.container1 .box1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: rgb(87, 189, 94);
+  filter: blur(16px);
+}
+.container1 .box1 b {
+  padding: 30px;
+  position: absolute;
+  display: block;
+  inset: 4px;
+  border-radius: 16px;
+  background: rgba(86, 113, 112, 0.75);
+  z-index: 2;
+
+}
+
+.container1 .box1 b p {
+
+  font-weight: 200;
+  color: #fff;
+  text-shadow: 0 0 15px #fff;
+ 
+}
+label{
+  font-weight: 200;
+  color: #070202;
+  font-size: 20px;
+  /* margin: 10px; */
+  /* text-shadow: 0 0 15px #080101; */
+}
+span{
+  font-size: 18px;
+  font-weight: 200;
+  
+  color: #fff;
+  text-shadow: 0 0 15px #fff;
+}
+/* .container .box:nth-child(1)::before,
+.container .box:nth-child(1)::after {
+  background: linear-gradient(45deg, #ffbc00, #ff0058); 
+}  */
+
+/* .container .box:nth-child(2)::before,
+.container .box:nth-child(2)::after {
+  background: linear-gradient(45deg, #03a9f4, #ff0058);
+}
+
+.container .box:nth-child(3)::before,
+.container .box:nth-child(3)::after {
+  background: linear-gradient(45deg, #4dff03, #00d0ff);
+} */

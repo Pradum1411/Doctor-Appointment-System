@@ -1,0 +1,63 @@
+<%-include("side_nav")-%>
+      <div class="container1 ">
+            <div class="box2" style="width: 600px;"><b>
+                    <div style="margin-top:12px">
+                        <span>
+                            Dr. <%=booking.name%>
+                        </span></br>
+                    </div>
+
+                    <div style="margin-top: 12px;">
+                        <label>Fess Per Cunsaltation </label>: <span>
+                            <%=booking.fees%>
+                        </span></br>
+                    </div>
+                    <div style="margin-top: 12px;">
+
+                        <label>Timing </label>: <span>
+                            <%=booking.timing[0]%> -to- <%=booking.timing[1]%>
+                        </span></br>
+                    </div>
+                    <form action="#" method="post">
+                    <div style="margin-top: 12px;">
+                        <label>Select Date :</label>
+                        <input style="width: 191px;" type="date" name="date" required>
+                    </br>
+                    </div>
+                    <div style="margin-top: 12px;">
+                        <label>Select Time :</label>
+                        <input type="time" name="start_time" required>
+                        <!-- <label>-to- :</label>
+                        <input type="time" name="end_time"> -->
+                    </br>
+                    </div>
+
+                    <div style="margin-top: 60px; display: flex;">
+                       
+                            <button type="submit" onclick="ddd2()"
+                                style="cursor: pointer;background-color:rgb(10, 13, 13); width: 200px;">
+                                <span> Check Availability</span>
+                            </button>
+                            
+                                <input type="text" value="<%=booking.id%>" hidden name="id">
+                                <button type="submit" onclick="ddd1()"
+                                    style="cursor: pointer;background-color:rgb(10, 13, 13); width: 200px;margin-left: 22px;">
+                                    <span> Book Now</span>
+                                </button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+<script>
+     let ddd1=()=>{
+         let a1=document.getElementsByTagName("form")[0]
+         a1.setAttribute("action","/appointments")
+         console.log("add1--",a1.getAttribute("action"))
+     }
+     let ddd2=()=>{
+         let a1=document.getElementsByTagName("form")[0]
+         a1.setAttribute("action","/checkavailability")
+         console.log("add2---",a1.getAttribute("action"))
+     }
+</script>
+    <%-include("footer")-%>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/home1.css">
+    <link rel="stylesheet" href="/stylesheets/appointments.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/stylesheets/doctor_card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div class="doc">WELCOME</div>
+            <div class="id1">
+                <a href="/home"><i class="fa-solid fa-house"></i>&nbsp;&nbsp; Home</a>
+            </div>
+
+            <div class="id1">
+                <a href="/appointments"><i class="fa-solid fa-bars"></i>&nbsp; Appointments</a>
+
+            </div>
+            <% if(!doctor){%>
+                
+                <div class="id1">
+                    <a href="/applydoctor"><i class="fa-solid fa-user-doctor"></i> &nbsp;Apply Doctor</a>
+                </div>
+                <%}%>
+            <div class="id1">
+                <a href="/profile"><i class="fa-solid fa-user"></i>&nbsp; &nbsp;Profile</a>
+            </div>
+            <div class="id1">
+                <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp; Logout</a>
+            </div>
+
+        </div>
+        <div id="div3">
+            <div class="nav">
+
+                <a href="#" style=" margin: 22px;"> welcome- <%=username%></a>
+                <a href="/notification" style=" margin: 12px;"><i class="fa-regular fa-bell">
+                    <sup style="font-size: 10px; color: rgb(122, 30, 18);">
+                        <% if(size > 0){%>
+                            <%=size%>
+                            
+                            <%}%>
+                        </sup> 
+                </i></a>
+                <div id="id1">
+                    <% if (successMessage) { %>
+                        <div class="alert alert-success">
+                            <%= successMessage %>
+                        </div>
+                        <% } %>
+                            <% if (errorMessage) { %>
+                                <div class="alert alert-danger">
+                                    <%= errorMessage %>
+                                </div>
+                                <% } %>
+                </div>
+            </div>
+            

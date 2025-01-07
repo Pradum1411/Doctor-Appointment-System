@@ -1,0 +1,57 @@
+<%-include("side_nav")-%>
+
+  <div class="container1">
+    <%doctor_profile.doctorList.forEach(item=>{%>
+
+      <div class="box2"><b>
+          <div style="margin-top: 12px;">
+            <label>Dr. </label> <span>
+              <%= item.name %>
+            </span></br>
+          </div>
+          <div style="margin-top: 12px;">
+            <label>Expirience</label>: <span>
+              <%= item.Expirience %>
+            </span></br>
+          </div>
+          <div style="margin-top: 12px;">
+            <label>Specialization </label>: <span>
+              <%= item.Specialization %>
+            </span></br>
+          </div>
+          <div style="margin-top: 12px;">
+            <label>Fess Per Cunsaltation </label>: <span>
+              <%= item.Fees_Per_Cunsaltation %>
+            </span></br>
+          </div>
+          <div style="margin-top: 12px;">
+            <label>Timings </label>: <span>
+              <%= item.start_time %>-to-<%= item.end_time %>
+            </span></br>
+          </div>
+          
+          <div style="margin-top: 60px;">
+            <form action="/booking_page" method="post">
+
+              <input type="text" value="<%=item.name%>" hidden name="name">
+              <input type="text" value="<%=item.id%>" hidden name="id">
+              <input type="text" value="<%=item.Fees_Per_Cunsaltation%>" hidden name="fees">
+              <input type="text" value="<%=item.start_time%>" hidden name="timing">
+              <input type="text" value="<%=item.end_time%>" hidden name="timing">
+              
+
+              <button type="submit" style="cursor: pointer;background-color:rgb(10, 13, 13); width: 200px;">
+                <span> Book Apponitments</span>
+              </button>
+            </form>
+          </div>
+      
+          
+        
+      </b></div>
+
+      <%})%>
+  </div>
+  
+
+  <%-include("footer")-%>

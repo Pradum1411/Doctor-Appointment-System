@@ -1,0 +1,87 @@
+<%-include("side_nav")-%>
+<form action="/applydoctor" method="post">
+
+    <div class="form">
+        <div class="form-control">
+            <label for="name" id="label-name">
+                First Name<i class="fa-regular fa-star"></i>
+            </label>
+            <input type="text" name="firstname" placeholder="Enter first name" required />
+        </div>
+
+        <div class="form-control">
+            <label for="email" id="label-email">
+                Last name<i class="fa-regular fa-star"></i>
+            </label>
+            <input type="text" name="lastname" placeholder="Enter Last name" />
+        </div>
+
+        <div class="form-control">
+            <label for="email" id="label-email">
+                Mobile No<i class="fa-regular fa-star"></i>
+            </label>
+            <input type="text" name="mobile" placeholder="Enter your mobile no" required/>
+        </div>
+    </div>
+
+    <div class="form">
+        <div class="form-control">
+            <label for="name" id="label-name">
+                Email<i class="fa-regular fa-star"></i>
+            </label>
+            <input type="email" name="email" placeholder="Enter your Email" required/>
+        </div>
+
+        <div class="form-control">
+            <label for="email" id="label-email">
+                Website
+            </label>
+            <input type="text" name="website" placeholder="Enter website" />
+        </div>
+        <div class="form-control">
+            <label for="email" id="label-email">
+                Address<i class="fa-regular fa-star"></i>
+            </label>
+            <input type="text" name="address" placeholder="Enter your Address"  />
+        </div>
+    </div>
+
+    <div class="form">
+        <div class="form-control">
+            <label for="name" id="label-name">
+                Specialization<i class="fa-regular fa-star"></i>
+            </label>
+            <input type="text" name="Specialization" placeholder="your Specialization" />
+        </div>
+
+        <div class="form-control">
+            <label for="email" id="label-email">
+                Experience<i class="fa-regular fa-star"></i>
+            </label>
+            <input type="text" name="Experience" placeholder="your Experience" />
+        </div>
+        <div class="form-control">
+            <label for="email" id="label-email">
+                Fees Per Cunsaltation<i class="fa-regular fa-star"></i>
+            </label>
+            <input type="number" name="fees" placeholder="your fees" required />
+        </div>
+    </div>
+    <div class="form">
+
+        <div class="time">
+            <label for="email" id="label-email">
+                Timing<i class="fa-regular fa-star"></i>
+            </label>
+            <input  type="time" name="starttime" required/>
+            <input type="time" name="endtime" required/>
+        </div>
+        <div class="submit">
+            <input style="cursor: pointer;" id="style" type="submit" value="submit" />
+        </div>
+    </div>
+</form>
+          
+
+
+<%-include("footer")-%>

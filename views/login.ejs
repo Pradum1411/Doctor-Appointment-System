@@ -1,0 +1,46 @@
+
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+  </head>
+  <body>
+    
+    <div class="box">
+    <span class="borderLine"></span>
+    <form action="/login" method="post">
+        <h2>Login</h2>
+        <div id="id1">
+
+            <% if (successMessage) { %>
+              <div class="alert alert-success">
+                <%= successMessage %>
+              </div>
+              <% } %>
+              <% if (errorMessage) { %>
+                <div class="alert alert-danger">
+                  <%= errorMessage %>
+                </div>
+                <% } %>
+              </div>
+        <div class="inputBox">
+            <input type="text" required name="username">
+            <span>Username</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="password" required name="password">
+            <span>Password</span>
+            <i></i>
+        </div>
+        <div class="links">
+            <a href="#">home</a>
+            <a href="/forgatepassword">Forgot Password</a>
+            <a href="/signup">Signup</a>
+        </div>
+        <input type="submit" id="submit" value="Login">
+    </form>
+</div>
+<script src="/javascripts/flash.js"></script>
+</body>
+</html>

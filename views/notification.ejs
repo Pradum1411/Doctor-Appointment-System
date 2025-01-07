@@ -1,0 +1,187 @@
+<%-include("side_nav")-%>
+   
+    <form action="/seen_notification" method="post">
+        <input style="cursor: pointer" type="submit" value="Read notification">
+    </form>
+    
+    <% user.notification.forEach((item)=>{ %>
+        
+            <!-- Main -->
+            <div class="main">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Application Status</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.Status %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>First_Name</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.First_Name %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Last_Name</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.Last_Name %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Phone</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.Phone %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.Email %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Website</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.Website %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.Address %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Specialization</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.Specialization %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Expirience</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.Expirience %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Fees_Per_Cunsaltation</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.Fees_Per_Cunsaltation %>
+                                    </td>
+                                </tr>
+                                <tr id="bt12">
+                                    <td>Timings</td>
+                                    <td>:</td>
+                                    <td>
+                                        <%= item.Timings.starting_time %>-to-
+                                        <%= item.Timings.ending_time %>
+                                    </td>
+                                    <td style="display:flex">
+                                        <!-- <form style="margin-left: 400px;display:flex" action="/accept" method="post">
+                                            <input type="text" value="<%=item._id%>" hidden name="read">
+                                            <input class="form1" style=" color: rgb(21, 161, 35);" type="submit" value="Accept">
+                                        </form>
+                                        <form style="display:flex" action="/reject" method="post">
+                                            <input type="text" value="<%=item._id%>" hidden name="read">
+                                            <input class="form1" style=" color: rgb(128, 33, 33);" type="submit" value="Reject">
+                                        </form> -->
+                                        <form style="display:flex; margin-left: 400px" action="/read" method="post">
+                                            <input type="text" value="<%=item._id%>" hidden name="read">
+                                            <input class="form1" style="cursor: pointer; color: rgb(25, 65, 70);" type="submit" value="Read">
+                                            <!-- <button class="form1" style=" color: rgb(25, 65, 70);" type="submit">Submit 1</button> -->
+                                        </form>
+                                    </td>
+
+                                
+                                </tr>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+   
+        <% }); %>
+
+<% user.message.forEach((item)=>{ %>
+    <!-- Main -->
+    <div class="main">
+        <div class="card">
+            <div class="card-body">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Application Status</td>
+                            <td>:</td>
+                            <td>
+                                <%= item.status %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>:</td>
+                            <td>
+                                <%= item.username %>
+                            </td>
+                        </tr>
+                       
+                        <tr>
+                            <td>Date</td>
+                            <td>:</td>
+                            <td>
+                                <%= item.date %>
+                            </td>
+                        </tr>
+                        <tr id="bt12">
+                            <td>Timings</td>
+                            <td>:</td>
+                            <td>
+                                <%= item.timing.start_time %>
+                                 
+                            </td>
+                            <td style="display:flex">
+                                <!-- <form style="margin-left: 400px;display:flex" action="/accept" method="post">
+                                    <input type="text" value="<%=item._id%>" hidden name="read">
+                                    <input class="form1" style=" color: rgb(21, 161, 35);" type="submit" value="Accept">
+                                </form>
+                                <form style="display:flex" action="/reject" method="post">
+                                    <input type="text" value="<%=item._id%>" hidden name="read">
+                                    <input class="form1" style=" color: rgb(128, 33, 33);" type="submit" value="Reject">
+                                </form> -->
+                                <form style="display:flex;margin-left: 462px;" action="/read" method="post">
+                                    <input type="text" value="<%=item._id%>" hidden name="read">
+                                    <input class="form1" style="cursor: pointer; color: rgb(25, 65, 70);" type="submit" value="Read">
+                                    <!-- <button class="form1" style=" color: rgb(25, 65, 70);" type="submit">Submit 1</button> -->
+                                </form>
+                            </td>
+
+                        
+                        </tr>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+<% }); %>
+
+
+            <%-include("footer")-%>
